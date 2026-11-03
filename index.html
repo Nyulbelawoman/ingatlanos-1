@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kvakic-Gál Renáta Ingatlaniroda | Ingatlanok Pécsen és környékén</title>
+<meta name="description" content="Eladó és kiadó lakások, házak Pécsen és környékén. Ingatlanközvetítés, hitel és CSOK, ingatlanjog, felújítás egy kézben.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#141B17">
+<link rel="icon" href="mono-gold.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-page="home" data-nav="">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="ar" viewBox="0 0 16 16"><path d="M1 8h13M10 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <symbol id="i-map" viewBox="0 0 16 16"><path d="M1 3l4.5-1.5 5 1.5L15 1.5V13l-4.5 1.5-5-1.5L1 14.5zM5.5 1.5v11.5M10.5 3v11.5" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+  <symbol id="i-lst" viewBox="0 0 16 16"><path d="M1 3h14M1 8h14M1 13h14" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+</defs></svg>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Kvakic-Gál Renáta Ingatlaniroda, főoldal"><img src="mono-gold.png" alt="" width="44" height="44"><span><b>Kvakic-Gál Renáta</b><small>Ingatlaniroda · Pécs</small></span></a>
+    <ul>
+      <li><a href="ingatlanok.html" data-nav="ingatlanok">Ingatlanok</a></li>
+      <li><a href="eladoknak.html" data-nav="eladoknak">Eladóknak</a></li>
+      <li><a href="szolgaltatasok.html" data-nav="szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="rolunk.html" data-nav="rolunk">Rólunk</a></li>
+      <li><a href="kapcsolat.html" data-nav="kapcsolat">Kapcsolat</a></li>
+    </ul>
+    <a class="tel" href="tel:+36206229280">+36 20 622 9280</a>
+    <a class="btn btn-gold" href="eladoknak.html#ertekbecsles">Értékbecslést kérek</a>
+    <button class="burger" id="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mmenu"><i></i></button>
+  </div>
+</header>
+<nav class="mmenu" id="mmenu" aria-label="Mobil menü" data-lenis-prevent>
+  <a href="index.html">Főoldal</a><a href="ingatlanok.html">Ingatlanok</a><a href="eladoknak.html">Eladóknak</a><a href="szolgaltatasok.html">Szolgáltatások</a><a href="rolunk.html">Rólunk</a><a href="kapcsolat.html">Kapcsolat</a>
+  <a class="btn btn-gold" href="tel:+36206229280">Hívás: +36 20 622 9280</a>
+</nav>
+
+<main id="top">
+  <section class="hero dark" id="hero" aria-labelledby="h1">
+    <figure class="bg"><img id="heroImg" src="hero.jpg" alt="Pécs látképe a székesegyház tornyaival" width="2400" height="1351" fetchpriority="high"></figure>
+    <div class="hero-in"><div class="wrap">
+      <p class="eyebrow up" style="--d:.2s">Ingatlaniroda Pécsen</p>
+      <h1 id="h1" class="split" style="margin-top:22px">Otthon Pécsen, <em>gondosan</em> közvetítve.</h1>
+      <p class="lead up" style="--d:.55s">Eladó és kiadó lakások, házak, telkek Pécsen és környékén. Hitel, CSOK, ingatlanjog és felújítás egy kézben, hogy Önnek csak döntenie kelljen.</p>
+      <form class="qs up" id="qs" style="--d:.7s" action="ingatlanok.html" method="get" aria-label="Ingatlankereső"><input type="hidden" name="mode" id="qMode" value="elado">
+        <div class="seg"><div class="tog" role="group" aria-label="Eladó vagy kiadó"><button type="button" data-qmode="elado" aria-pressed="true">Eladó</button><button type="button" data-qmode="kiado" aria-pressed="false">Kiadó</button></div></div>
+        <label><span>Hol?</span><select id="qWhere" name="hol" aria-label="Hol keres?"></select></label>
+        <label><span>Milyen?</span><select id="qType" name="tipus" aria-label="Ingatlan típusa"><option value="">Bármilyen ingatlan</option><option>Lakás</option><option>Ház</option><option>Nyaraló</option></select></label>
+        <label><span>Mennyiért?</span><select id="qPrice" name="ar" aria-label="Legfeljebb mennyiért?"></select></label>
+        <button class="btn btn-ink" type="submit">Keresés <svg><use href="#ar"/></svg></button>
+      </form>
+    </div></div>
+  </section>
+
+
+  <section class="mapband" aria-labelledby="mb-h">
+    <div class="wrap mb">
+      <div class="mb-txt">
+        <span class="eyebrow rv">Térképes keresés</span>
+        <h2 id="mb-h" class="split">Nézze meg, <em>hol vannak</em></h2>
+        <p class="rv">Minden ajánlatunk egy térképen, a Belvárostól Orfűig. Vigye az egeret egy pontra az árért, kattintson, és már nézheti is az adatlapot.</p>
+        <p class="mb-count rv" id="mbCount"></p>
+        <a class="btn btn-ink rv" href="ingatlanok.html?nezet=terkep"><svg width="16" height="16"><use href="#i-map"/></svg>Térkép megnyitása</a>
+      </div>
+      <div class="mb-map rv" id="homeMap" role="region" aria-label="Ajánlataink térképen"></div>
+    </div>
+  </section>
+
+  <section class="feat" aria-labelledby="fe-h">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><span class="eyebrow rv">Kiemelt ajánlataink</span><h2 id="fe-h" class="split">Válogatott <em>otthonok</em></h2></div>
+        <a class="link rv" href="ingatlanok.html">Összes ingatlan <svg><use href="#ar"/></svg></a>
+      </div>
+      <div class="feat-grid" id="featGrid"><a class="fcard rv" href="ingatlan.html?id=KV-1042"><figure class="ph" data-par><img src="e1.jpg" alt="" loading="lazy"></figure><div class="fc"><small>Ház · Mecsekoldal · mintahirdetés</small><h3>Panorámás villa medencével</h3><div class="row"><span>320 m² · 6 szoba · 1 450 m² telek</span><span class="price">289 M Ft</span></div></div></a><a class="fcard rv" href="ingatlan.html?id=KV-1031"><figure class="ph" data-par><img src="i2.jpg" alt="" loading="lazy"></figure><div class="fc"><small>Lakás · Rókus-domb · mintahirdetés</small><h3>Penthouse terasszal a Rókus-dombon</h3><div class="row"><span>128 m² · 4 szoba</span><span class="price">118 M Ft</span></div></div></a><a class="fcard rv" href="ingatlan.html?id=KV-1035"><figure class="ph" data-par><img src="e3.jpg" alt="" loading="lazy"></figure><div class="fc"><small>Ház · Donátus · mintahirdetés</small><h3>Modern családi ház Donátuson</h3><div class="row"><span>210 m² · 5 szoba · 820 m² telek</span><span class="price">159 M Ft</span></div></div></a></div>
+    </div>
+  </section>
+
+  <section class="stmt" aria-label="Ahogy dolgozunk">
+    <div class="wrap">
+      <span class="eyebrow rv">Ahogy dolgozunk</span>
+      <p class="lit" id="lit">Ingatlanát egyszer hirdetjük meg, jó képekkel és fölösleges ámítás nélkül. A közös munka végén mindenki legyen elégedett, mert nekünk az ügyfél a legfontosabb.</p>
+      <div class="stmt-sig rv"><img src="renata.jpg" alt="" width="56" height="56"><span><b>Kvakic-Gál Renáta</b>irodavezető</span></div>
+    </div>
+  </section>
+
+  <section class="sec tight" aria-labelledby="sv-h" style="padding-top:20px">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><span class="eyebrow rv">Szolgáltatásaink</span><h2 id="sv-h" class="split">Minden <em>egy kézben</em></h2></div>
+        <p class="rv">Teljes körű szolgáltatásainkkal hozzájárulunk ügyfeleink kényelmes és hatékony ügyintézéséhez.</p>
+      </div>
+      <div class="tease">
+        <a class="rv" href="ingatlankozvetites.html"><span class="n">01</span><h3>Ingatlan&shy;közvetítés</h3><p>Értékesítés és bérbeadás, értékbecsléstől a birtokbaadásig.</p><span class="go">Részletek <svg><use href="#ar"/></svg></span></a>
+        <a class="rv" style="--d:.06s" href="hitel-csok.html"><span class="n">02</span><h3>Hitel és CSOK</h3><p>Bankfüggetlen hitel és állami támogatások egy helyen.</p><span class="go">Részletek <svg><use href="#ar"/></svg></span></a>
+        <a class="rv" style="--d:.12s" href="ingatlanjog.html"><span class="n">03</span><h3>Ingatlanjog</h3><p>Ingatlanjogban jártas ügyvéd, biztonságos szerződés.</p><span class="go">Részletek <svg><use href="#ar"/></svg></span></a>
+        <a class="rv" style="--d:.18s" href="felujitas.html"><span class="n">04</span><h3>Felújítás</h3><p>Teljes körű otthonfelújítás, építés, átépítés.</p><span class="go">Részletek <svg><use href="#ar"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" style="background:var(--ink);color:var(--ivory)" aria-labelledby="se-h">
+    <div class="wrap split2">
+      <figure class="ph rv" data-par><img src="office.jpg" alt="Elegáns, felújított lépcsőház zöld falakkal" width="900" height="1264" loading="lazy"></figure>
+      <div>
+        <span class="eyebrow rv">Eladóknak</span>
+        <h2 id="se-h" class="split">Eladná <em>ingatlanát?</em></h2>
+        <p class="lead rv">Mielőtt eladná, hívjon minket: a piaci helyzet ismeretében segítünk meghatározni a lehető legjobb árat, és pénzügyi, jogi háttérrel végigvisszük az eladást.</p>
+        <a class="btn btn-gold rv" href="eladoknak.html">Ingyenes értékbecslés <svg><use href="#ar"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" aria-labelledby="tm-h">
+    <div class="wrap">
+      <div class="sec-h">
+        <div><span class="eyebrow rv">Értékesítőink</span><h2 id="tm-h" class="split">Akikre <em>büszkék</em> vagyunk</h2></div>
+        <a class="link rv" href="rolunk.html">Rólunk <svg><use href="#ar"/></svg></a>
+      </div>
+      <div class="team-grid" id="teamGrid"><div class="member rv"><figure class="ph"><img src="renata.jpg" alt="Kvakic-Gál Renáta" width="400" height="521" loading="lazy"></figure><b>Kvakic-Gál Renáta</b><span class="r">Irodavezető, értékesítő</span></div><div class="member rv"><figure class="ph"><img src="bernadett.jpg" alt="Gyuris Bernadett" width="400" height="521" loading="lazy"></figure><b>Gyuris Bernadett</b><span class="r">Értékesítő</span></div><div class="member rv"><figure class="ph mono"><span aria-hidden="true">HA</span></figure><b>Hegedűs András</b><span class="r">Értékesítő</span></div><div class="member rv"><figure class="ph"><img src="cintia.jpg" alt="Rapp Cintia" width="400" height="521" loading="lazy"></figure><b>Rapp Cintia</b><span class="r">Értékesítő</span></div></div>
+    </div>
+  </section>
+
+  <section class="city" aria-labelledby="ct-h">
+    <figure class="ph" data-par><img src="pecs2.jpg" alt="A pécsi városháza tornya a Széchenyi téren" width="1600" height="1067" loading="lazy"></figure>
+    <div class="wrap">
+      <span class="eyebrow rv">Pécs és környéke</span>
+      <h2 id="ct-h" class="split" style="margin-top:20px">Itt élünk, <em>itt dolgozunk.</em></h2>
+      <p class="rv">Belváros, Mecsekoldal, Uránváros vagy egy csendes ház Orfűn: ismerjük a környékeket, és őszintén megmondjuk, melyik illik Önhöz.</p>
+      <a class="btn btn-gold rv" href="kapcsolat.html">Kérjen időpontot <svg><use href="#ar"/></svg></a>
+    </div>
+  </section>
+</main>
+<footer class="foot" id="kapcsolat">
+  <div class="wrap">
+    <div class="ft-top">
+      <div><h2>Bátran keressen <em>minket.</em></h2></div>
+      <div><h3>Iroda</h3><address>7632 Pécs,<br>Nagy Imre út 38. Fsz. 2.</address><p style="margin-top:8px"><a href="kapcsolat.html">Térkép és útvonal</a></p></div>
+      <div><h3>Elérhetőség</h3><p><a href="tel:+36206229280">+36 20 622 9280</a><br><a href="mailto:kvakicgalrenata@gmail.com">kvakicgalrenata@gmail.com</a></p></div>
+      <div><h3>Szolgáltatások</h3><p><a href="ingatlankozvetites.html">Ingatlanközvetítés</a><br><a href="hitel-csok.html">Hitel és CSOK</a><br><a href="ingatlanjog.html">Ingatlanjog</a><br><a href="felujitas.html">Felújítás</a></p></div>
+      <div><h3>Oldalak</h3><p><a href="ingatlanok.html">Ingatlanok</a><br><a href="eladoknak.html">Eladóknak</a><br><a href="szolgaltatasok.html">Szolgáltatások</a><br><a href="rolunk.html">Rólunk</a><br><a href="https://www.facebook.com/gal.renata.1" target="_blank" rel="noopener">Facebook ↗</a></p></div>
+    </div>
+    <div class="ft-big"><img src="mono-gold.png" alt="" width="64" height="64"><span>Kvakic Ingatlan</span></div>
+    <div class="legal"><span>© 2026 Kvakic-Gál Renáta Ingatlaniroda</span><span>Adatkezelési tájékoztató</span><a href="iroda.html">Irodai belépés</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="data.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
